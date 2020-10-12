@@ -57,7 +57,7 @@ str(bioClean)
 ```{r}
 defCleanPivot <- pivot_longer(defClean, Tackles_Solo:Pass_PB, names_to ="Defense_Skill", values_to = "stat")
 skills <- c('Tackles_Solo',	'Tackles_ASST',	'Tackles_TFL',	'Tackles_Sack',	'Turnover_FF', 'Turnover_FR',	'Turnover_INT',	'Pass_QBH	Pass_PB')
-ggplot(defCleanPivot, aes(x=Defense_Skill, y=stat, fill=Defense_Skill)) + 
+ggplot(defCleanPivot, aes(x=Defense_Skill, y=stat)) + 
   geom_bar(stat= 'identity') + scale_x_discrete(limits = skills) + 
   theme(axis.text.x = element_text(angle = 90)) + ylab("Count") + 
   xlab("Defensive Skill")
